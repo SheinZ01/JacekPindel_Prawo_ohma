@@ -17,7 +17,9 @@
                     <h4>I x R = U</h4>
                     <label><input type="number" id="A1U">A x </label>
                     <label><input type="number" id="R1U">&Omega; = </label>
-                    <div><div id="WU1"></div><p>V</p></div>
+                    <div><div id="WU1"></div></div>
+                    <br>
+                    <input id="obliczWU1" type="submit" value="oblicz I x R = U">
                 </fieldset>
             </form>
         </section>
@@ -31,6 +33,21 @@
         </aside>
         <footer>&copy; PINDEL 2020</footer>
         <script type="text/javascript">
+            //oblicz I x R = U
+            const WU1 = document.querySelector("#WU1");
+            const obU1 = document.querySelector("#obliczWU1");
+            const A1U = document.querySelector("#A1U");
+            const R1U = document.querySelector("#R1U");
+            
+            obU1.addEventListener("click", obU1S);
+            
+            function obU1S(event_obU1) {
+            event_obU1.preventDefault();
+
+            const numerA1U = parseInt(A1U.value);
+            const numerR1U = parseInt(R1U.value);
+            WU1.innerText = (numerA1U * numerR1U)+"V";
+            }
         </script>
     </body>
 </html>
