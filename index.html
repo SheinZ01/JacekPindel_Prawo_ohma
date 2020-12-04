@@ -17,9 +17,16 @@
                     <h4>I x R = U</h4>
                     <label><input type="number" id="A1U">A x </label>
                     <label><input type="number" id="R1U">&Omega; = </label>
-                    <div><div id="WU1"></div></div>
+                    <div id="WU1"></div>
                     <br>
                     <input id="obliczWU1" type="submit" value="oblicz I x R = U">
+                    <br><br>
+                    <h4>P / I = U</h4>
+                    <label><input type="number" id="P2U">W x </label>
+                    <label><input type="number" id="A2U">A = </label>
+                    <div id="WU2"></div>
+                    <br>
+                    <input id="obliczWU2" type="submit" value="oblicz P / I = U">
                 </fieldset>
             </form>
         </section>
@@ -47,6 +54,22 @@
             const numerA1U = parseInt(A1U.value);
             const numerR1U = parseInt(R1U.value);
             WU1.innerText = (numerA1U * numerR1U)+"V";
+            }
+            
+            //oblicz P / I = U"
+            const WU2 = document.querySelector("#WU2");
+            const obU2 = document.querySelector("#obliczWU2");
+            const P2U = document.querySelector("#P2U");
+            const A2U = document.querySelector("#A2U");
+            
+            obU2.addEventListener("click", obU2S);
+            
+            function obU2S(event_obU2) {
+            event_obU2.preventDefault();
+
+            const numerP2U = parseInt(P2U.value);
+            const numerA2U = parseInt(A2U.value);
+            WU2.innerText = (numerP2U / numerA2U)+"V";
             }
         </script>
     </body>
